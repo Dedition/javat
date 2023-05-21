@@ -14,7 +14,7 @@ const sumZero = (intArr) => {
 
     while (left < right) {
         let sum = intArr[left] + intArr[right];
-        if (sum === 0) return [intArr[left], intArr[right]]
+        if (sum === 0) return [intArr[left], intArr[right]];
         else if (sum > 0) {
             right--;
         } else {
