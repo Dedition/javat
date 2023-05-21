@@ -9,13 +9,20 @@ sumZero([1, 2, 3]) // undefined
 */
 
 const sumZero = (intArr) => {
-    for (let i = 0; i < intArr.length; i++) {
-        for (let j = intArr.length - 1; j >= 0; j--) {
-            if (intArr[i] + intArr[j] === 0) return [intArr[i], intArr[j]];
-            else return;
+    let left = 0;
+    let right = intArr.length - 1;
+
+    while (left < right) {
+        let sum = intArr[left] + intArr[right];
+        if (sum === 0) return [intArr[left], intArr[right]]
+        else if (sum > 0) {
+            right--;
+        } else {
+            left++;
         }
     }
-}
+};
+
 
 console.log(sumZero([-3, -2, -1, 0, 1, 2, 3])) // [-3, 3]
 console.log(sumZero([-2, 0, 1, 3])) // undefined
